@@ -1,0 +1,10 @@
+.popup__submit_dark_theme {
+  color: black;
+  background: white;
+  margin: 218px 0 0;
+  transition: background .3s linear;  
+}
+
+.popup__submit_dark_theme:hover {
+  background: rgb(204, 204, 204, 0.5);
+}

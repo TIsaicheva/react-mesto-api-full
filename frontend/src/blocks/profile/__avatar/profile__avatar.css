@@ -1,0 +1,21 @@
+.profile__avatar {
+    min-width: 120px;
+    height: 120px;
+    background: url(../../../images/avatar.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.profile__avatar:hover::after {
+    content: '';
+    background: url(../../../images/editAvatar.svg) no-repeat center;
+    border-radius: 50%;
+    background-color: rgba(42, 44, 47, 0.8);    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;   
+}

@@ -1,0 +1,12 @@
+.menu__item_btn{
+    outline: none;
+    border: none;    
+    background: black;
+    cursor: pointer;
+    height: 29px;
+    display: inline-flex;
+}
+
+.menu__item_btn:hover {
+    opacity: 0.6;
+}

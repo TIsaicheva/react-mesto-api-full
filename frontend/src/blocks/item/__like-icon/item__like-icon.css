@@ -1,0 +1,13 @@
+.item__like-icon {
+    width: 22px;
+    height: 19px;
+    background: url(../../../images/like.svg) no-repeat center center;
+    padding: 0 5px 0;    
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.item__like-icon:hover {
+    background: url(../../../images/like_hover.svg) no-repeat center center;
+}

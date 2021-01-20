@@ -1,0 +1,8 @@
+.item__like-counter {
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.2;
+    padding-top: 3px;
+    margin: 0;
+}

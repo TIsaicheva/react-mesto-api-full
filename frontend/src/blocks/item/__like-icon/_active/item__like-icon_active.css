@@ -1,0 +1,7 @@
+.item__like-icon_active {
+    background: url(../../../../images/like_active.svg) no-repeat center center;
+}
+
+.item__like-icon_active:hover {
+    background: url(../../../../images/like_active.svg) no-repeat center center;
+}

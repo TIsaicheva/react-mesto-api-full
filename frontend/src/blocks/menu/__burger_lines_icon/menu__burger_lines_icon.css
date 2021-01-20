@@ -1,0 +1,12 @@
+@media (max-width: 375px) {
+    .menu__burger_lines_icon {
+      width: 24px;
+      height: 24px;
+      background: url(../../../images/burger_line.svg) no-repeat center;
+      cursor: pointer;
+    }
+  
+    .menu__burger_lines_icon:hover {
+      background: url(../../../images/burger_line_gr.svg) no-repeat center;
+    }
+  }

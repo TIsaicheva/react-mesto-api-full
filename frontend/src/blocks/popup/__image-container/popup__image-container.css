@@ -1,0 +1,7 @@
+.popup__image-container {
+    display: flex; 
+    position: fixed;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, 0);    
+}

@@ -1,0 +1,10 @@
+.item {
+    max-width: 282px;
+    min-height: 361px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+}

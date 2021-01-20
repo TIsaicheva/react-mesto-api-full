@@ -1,0 +1,12 @@
+@media (max-width: 375px) {
+    .menu__burger_close_icon {
+      width: 24px;
+      height: 24px;
+      background: url(../../../images/close_burger.svg) no-repeat center;
+      cursor: pointer;
+    }
+  
+    .menu__burger_close_icon:hover {
+      background: url(../../../images/close_burger_gr.svg) no-repeat center;
+    }
+  }

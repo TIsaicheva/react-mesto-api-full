@@ -1,0 +1,13 @@
+.logo {
+    background: url(../../images/logo.svg) no-repeat;
+    width: 142.01px;
+    min-height: 33.4px;
+}
+
+@media (max-width: 767px){
+    .logo {
+        background: url(../../images/logo_mobile.svg) no-repeat;
+        max-width: 103.74px;
+        min-height: 24.4px;       
+    }
+}

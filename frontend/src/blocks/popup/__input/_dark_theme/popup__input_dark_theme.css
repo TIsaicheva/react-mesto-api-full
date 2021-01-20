@@ -1,0 +1,12 @@
+.popup__input_dark_theme{
+    border-bottom: 2px solid #CCCCCC;   
+    background: black;
+    outline: none;
+    color: white;
+}
+
+.popup__input_dark_theme::placeholder {
+    color: #CCCCCC;
+    font-size: 14px;
+    line-height: 1.21;
+}

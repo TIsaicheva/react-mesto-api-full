@@ -1,0 +1,13 @@
+.profile__data {
+    max-width: 486px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+@media (max-width: 670px) {
+    .profile__data {
+        flex-direction: column;
+        padding: 0 0 36px 0; 
+    }
+}

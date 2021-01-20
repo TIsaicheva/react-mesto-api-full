@@ -1,0 +1,15 @@
+.item__delete {
+    width: 18px;
+    height: 19px;
+    background: url(../../../images/trash.svg) no-repeat center center;    
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.item__delete:hover {
+    background: url(../../../images/trash_hover.svg) no-repeat center center;
+}
