@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://api.tisaicheva.students.nomoredomains.icu";
 
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {

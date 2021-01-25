@@ -84,6 +84,6 @@ class Api {
   }
 }
 
-const api = new Api({ baseUrl: 'http://localhost:3000' });
+const api = new Api({ baseUrl: 'https://api.tisaicheva.students.nomoredomains.icu' });
 
 export default api;
