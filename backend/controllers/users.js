@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFoundError = require('../errors/notFoundError');
 const BadRequestError = require('../errors/badRequestError');
-const {SECRET_KEY} = require('../utils/constants');
 
 const {
   ERROR_CODE_NOT_FOUND,
@@ -12,14 +11,17 @@ const {
   USER_NOT_FOUND_ERROR_MESSAGE,
 } = require('../utils/constants');
 
+const { JWT_SECRET } = process.env;
+
 function login(req, res, next) {
   const { email, password } = req.body;
+  console.log(typeof JWT_SECRET);
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        SECRET_KEY,
+        JWT_SECRET,
         { expiresIn: '7d' },
       );
       res.send({ token });

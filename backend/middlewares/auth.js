@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
-const YOUR_JWT = '';
-const {SECRET_KEY} = require('../utils/constants');
+
+const { JWT_SECRET } = process.env;
 
 // eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
@@ -14,13 +14,13 @@ module.exports = (req, res, next) => {
   }
 
   /* избавиться от 'Bearer ' в токене */
-  YOUR_JWT = authorization.replace('Bearer ', '');
+  const YOUR_JWT = authorization.replace('Bearer ', '');
   let payload;
 
   try {
     /* метод verify проверяет, что токен верный и возвращает payload
     пользователя (в данном случае возвращается _id) */
-    payload = jwt.verify(YOUR_JWT, SECRET_KEY);
+    payload = jwt.verify(YOUR_JWT, JWT_SECRET);
   } catch (err) {
     return res
       .status(401)
