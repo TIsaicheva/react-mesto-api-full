@@ -6,6 +6,7 @@ const INVALID_ID_ERROR_MESSAGE = 'Невалидный id.';
 const CARD_NOT_FOUND_ERROR_MESSAGE = 'Нет карточки с таким id.';
 const USER_NOT_FOUND_ERROR_MESSAGE = 'Нет пользователя с таким id.';
 const NO_AUTHORIZATION_ERROR_MESSAGE = 'У Вас нет прав удалять данную карточку!';
+const SECRET_KEY = 'e312e11e01465e5a6f4572364da6fe15';
 
 module.exports = {
   ERROR_CODE_NOT_FOUND,
@@ -16,4 +17,5 @@ module.exports = {
   USER_NOT_FOUND_ERROR_MESSAGE,
   NO_AUTHORIZATION_ERROR_MESSAGE,
   ERROR_CODE_NO_AUTHORIZATION,
+  SECRET_KEY_DEV
 };

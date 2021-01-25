@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFoundError = require('../errors/notFoundError');
 const BadRequestError = require('../errors/badRequestError');
+const {SECRET_KEY} = require('../utils/constants');
 
 const {
   ERROR_CODE_NOT_FOUND,
@@ -18,7 +19,7 @@ function login(req, res, next) {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        'some-secret-key',
+        SECRET_KEY,
         { expiresIn: '7d' },
       );
       res.send({ token });
