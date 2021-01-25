@@ -5,9 +5,9 @@ import classNames from 'classnames';
 function Card(props) {
     const currentUser = React.useContext(CurrentUserContext);
     /* определить, принадлежит ли карточка текущему пользователю */
-    const isOwner = props.card.owner._id === currentUser._id;
+    const isOwner = props.card.owner === currentUser._id;
     /* определить, поставил текущий пользователь лайк данной карточке */
-    const isLiked = props.card.likes.some(i => i._id === currentUser._id);
+    const isLiked = props.card.likes.some(i => i === currentUser._id);
     /* определить класс для кнопки удаления */   
     const deleteButtonClassName = classNames('item__delete', {'item__delete_none': !isOwner});
     /* определить класс для кнопки лайка */    

@@ -41,8 +41,9 @@ function App() {
   const history = useHistory();
 
   React.useEffect(() => {
-    Promise.all([api.getUserInfo(), api.getInitialCards()])
-      .then(([userInfo, initialCards]) => {
+    if (loggedIn) {
+      Promise.all([api.getUserInfo(), api.getInitialCards()])
+      .then(([userInfo, initialCards]) => {  
         setCurrentUser(userInfo);
         setCards(initialCards);
       })
@@ -50,7 +51,8 @@ function App() {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+    }
+  }, [loggedIn]);
 
   React.useEffect(() => {
     function handleESCClose(e) {
@@ -65,8 +67,8 @@ function App() {
     };
   }, []);
 
-  function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+  function handleCardLike(card) {  
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     api
       .changeLikeCardStatus(card._id, isLiked)
@@ -166,8 +168,8 @@ function App() {
       });
   }
 
-  function onSignOut() {
-    setLoggedIn(false);
+  function onSignOut() {  
+    setLoggedIn(false);  
     localStorage.removeItem("jwt");
     history.push("/sign-in");
   }
@@ -193,28 +195,23 @@ function App() {
     auth
       .login(email, password)
       .then((res) => {
-        if (res) {
+        if (res) {    
           setEmail(email)
           setLoggedIn(true);
-          history.push("/");
+          history.push("/"); 
         }
       })
       .catch((err) => console.log(err));
-  }
-
-  React.useEffect(() => {
-    handleCheckToken();
-    // eslint-disable-next-line
-  }, []);
+  }  
 
   function handleCheckToken() {
     if (localStorage.getItem("jwt")) {
       const jwt = localStorage.getItem("jwt");
       auth
         .checkToken(jwt)
-        .then((res) => {
-          if (res) {
-            setEmail(res.data.email);
+        .then((res) => {          
+          if (res) {  
+            setEmail(res.email);
             setLoggedIn(true);
             history.push("/");
           }
@@ -222,6 +219,11 @@ function App() {
         .catch((err) => console.log(err));
     }
   }
+  
+  React.useEffect(() => {  
+    handleCheckToken();
+    // eslint-disable-next-line    
+  }, [loggedIn]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
