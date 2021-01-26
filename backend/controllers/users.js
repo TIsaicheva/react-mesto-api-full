@@ -15,7 +15,6 @@ const { JWT_SECRET } = process.env;
 
 function login(req, res, next) {
   const { email, password } = req.body;
-  console.log(typeof JWT_SECRET);
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
@@ -83,10 +82,22 @@ function createUser(req, res, next) {
       about,
       avatar,
     }))
-    .then((user) => res.status(200).send(user))
+    .then((user) => res.status(200).send({
+      name: user.name,
+      about: user.about,
+      avatar: user.avatar,
+      email: user.email,
+      _id: user._id,
+    }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         return next(new BadRequestError(err.message));
+      }
+      if (err.name === 'MongoError') {
+        const e = new Error();
+        e.statusCode = 409;
+        e.message = err.message;
+        return next(e);
       }
       return next(err);
     });

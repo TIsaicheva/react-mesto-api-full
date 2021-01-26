@@ -41,10 +41,8 @@ app.post('/signup', celebrate({
   }).unknown(true),
 }), createUser);
 
-app.use(auth);
-
-app.use('/', usersRouter);
-app.use('/', cardsRouter);
+app.use('/users', auth, usersRouter);
+app.use('/cards', auth, cardsRouter);
 app.use('/', notFoundRouter);
 
 // логгер ошибок
