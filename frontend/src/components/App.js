@@ -127,7 +127,7 @@ function App() {
   }
 
   function handleUpdateUser(userInfo) {
-    setIsLoading(true);
+    setIsLoading(true);    
     api
       .editUserInfo(userInfo)
       .then((newUserInfo) => {

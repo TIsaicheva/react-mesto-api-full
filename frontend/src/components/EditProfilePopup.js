@@ -14,7 +14,7 @@ function EditProfilePopup(props) {
   } = useFormValidation();
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault();    
     props.onUpdateUser(values);
   }
 
