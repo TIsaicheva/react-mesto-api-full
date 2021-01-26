@@ -10,7 +10,7 @@ router.patch('/me', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(3).max(30).required(),
     about: Joi.string().min(3).max(30).required(),
-  }),
+  }).unknown(true),
 }), updateProfile);
 router.get('/:id', celebrate({
   params: Joi.object().keys({
